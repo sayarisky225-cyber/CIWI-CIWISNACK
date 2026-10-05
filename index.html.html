@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nugget Jantung Pisang - Sehat, Renyah & Lezat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #1e3a8a;
+            --secondary-blue: #3b82f6;
+            --light-blue: #eff6ff;
+            --cream-bg: #fdfbf7;
+            --cream-card: #f7f2e7;
+            --accent-gold: #d97706;
+            --text-dark: #1f2937;
+            --text-muted: #4b5563;
+            --white: #ffffff;
+            --whatsapp-green: #25d366;
+            --shadow-sm: 0 4px 6px -1px rgba(0,0,0,0.05);
+            --shadow-md: 0 10px 15px -3px rgba(30, 58, 138, 0.1);
+            --radius-md: 14px;
+            --radius-lg: 20px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--cream-bg); color: var(--text-dark); line-height: 1.6; }
+        .container { max-width: 1100px; margin: auto; padding: 0 20px; }
+
+        header { background-color: var(--white); position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow-sm); border-bottom: 2px solid var(--cream-card); }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; }
+        .logo { font-size: 1.4rem; font-weight: 700; color: var(--primary-blue); display: flex; align-items: center; gap: 8px; }
+        .nav-links { display: flex; list-style: none; gap: 20px; }
+        .nav-links a { text-decoration: none; color: var(--text-muted); font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { color: var(--secondary-blue); }
+
+        .hero { padding: 60px 0; background: linear-gradient(135deg, var(--light-blue) 0%, var(--cream-bg) 100%); border-bottom-left-radius: 40px; border-bottom-right-radius: 40px; }
+        .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; }
+        .badge { display: inline-block; background-color: #dbeafe; color: var(--primary-blue); padding: 6px 14px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 15px; }
+        .hero h1 { font-size: 2.5rem; line-height: 1.25; color: var(--primary-blue); margin-bottom: 16px; }
+        .hero p { font-size: 1rem; color: var(--text-muted); margin-bottom: 24px; }
+        .hero-btn-group { display: flex; gap: 15px; flex-wrap: wrap; }
+
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 26px; border-radius: 50px; font-size: 0.95rem; font-weight: 600; text-decoration: none; cursor: pointer; transition: 0.3s; border: none; }
+        .btn-primary { background-color: var(--primary-blue); color: var(--white); }
+        .btn-primary:hover { background-color: var(--secondary-blue); transform: translateY(-2px); }
+        .btn-whatsapp { background-color: var(--whatsapp-green); color: var(--white); }
+
+        .img-card { background: var(--white); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 3px solid var(--white); }
+        .img-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+        section { padding: 60px 0; }
+        .section-header { text-align: center; margin-bottom: 40px; }
+        .section-header h2 { font-size: 2rem; color: var(--primary-blue); margin-bottom: 10px; }
+
+        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .benefit-card { background-color: var(--white); padding: 24px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); border-top: 4px solid var(--secondary-blue); }
+
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 30px; }
+        .gallery-item { position: relative; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); background: white; }
+        .gallery-item img { width: 100%; height: 220px; object-fit: cover; }
+        .gallery-caption { padding: 15px; background: white; text-align: center; font-weight: 600; color: var(--primary-blue); }
+
+        .order-section { background-color: var(--cream-card); border-radius: var(--radius-lg); padding: 35px; border: 1px solid #e8dec8; }
+        .order-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 30px; align-items: start; }
+        
+        .form-group { margin-bottom: 16px; }
+        .form-group label { display: block; font-size: 0.88rem; font-weight: 600; margin-bottom: 6px; }
+        .form-control { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; }
+
+        footer { background-color: var(--primary-blue); color: var(--white); padding: 40px 0 20px; margin-top: 50px; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 30px; margin-bottom: 30px; }
+
+        @media (max-width: 768px) {
+            .hero-grid, .order-grid, .footer-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo"><i class="fa-solid fa-leaf"></i> Nugget Jantung Pisang</div>
+                <ul class="nav-links">
+                    <li><a href="#galeri">Produk</a></li>
+                    <li><a href="#manfaat">Manfaat</a></li>
+                    <li><a href="#pesan">Pesan</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-grid">
+            <div>
+                <span class="badge">🌱 Camilan Sehat & Bergizi</span>
+                <h1>Nugget Jantung Pisang Renyah & Gurih</h1>
+                <p>Olahan kreatif jantung pisang pilihan, kaya serat dan tanpa bahan pengawet. Hanya <strong>Rp 10.000 / Box (Isi 10 Pcs)</strong>.</p>
+                <div class="hero-btn-group">
+                    <a href="#pesan" class="btn btn-primary"><i class="fa-solid fa-cart-shopping"></i> Pesan Sekarang</a>
+                    <a href="https://wa.me/6285749447208" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Chat WA</a>
+                </div>
+            </div>
+            <div class="img-card">
+                <!-- Foto Nugget Goreng -->
+                <img src="1000448781.jpg" alt="Nugget Jantung Pisang Krispi" onerror="this.src='https://images.unsplash.com/photo-1562967914-608f82629710?w=600&auto=format&fit=crop'">
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeri Produk -->
+    <section id="galeri">
+        <div class="container">
+            <div class="section-header">
+                <h2>Galeri & Kemasan Produk</h2>
+                <p>Diproses secara higienis dari bahan alami berkualitas tinggi</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="1000448781.jpg" alt="Nugget Siap Santap" onerror="this.src='https://images.unsplash.com/photo-1562967914-608f82629710?w=600&auto=format&fit=crop'">
+                    <div class="gallery-caption">Sajian Nugget Krispi Gurih</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="1000453006.jpg" alt="Kemasan Box Higienis" onerror="this.src='https://images.unsplash.com/photo-1617347454431-f49d7ff5c3b1?w=600&auto=format&fit=crop'">
+                    <div class="gallery-caption">Kemasan Box Isi 10 Pcs</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="1000448784.jpg" alt="Bahan Jantung Pisang Segar" onerror="this.src='https://images.unsplash.com/photo-1528825871115-3581a5387919?w=600&auto=format&fit=crop'">
+                    <div class="gallery-caption">100% Jantung Pisang Segar</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="manfaat" style="background: var(--light-blue);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Manfaat Kesehatan Jantung Pisang</h2>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>🌾 Tinggi Serat</h3>
+                    <p>Melancarkan pencernaan dan memberikan rasa kenyang lebih lama.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>🛡️ Kaya Antioksidan</h3>
+                    <p>Mengandung flavonoid untuk menangkal radikal bebas dan menjaga imun.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>📈 Kontrol Gula Darah</h3>
+                    <p>Indeks glikemik rendah, cocok untuk cemilan sehat keluarga.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pesan">
+        <div class="container">
+            <div class="order-section">
+                <div class="section-header">
+                    <h2>Formulir Pemesanan</h2>
+                    <p>Otomatis membuatkan <strong>Nomor Antrean & Nota Struk WA</strong></p>
+                </div>
+                <div class="order-grid">
+                    <div style="background: white; padding: 25px; border-radius: 12px;">
+                        <h3 style="color: var(--primary-blue);">Nugget Jantung Pisang</h3>
+                        <div style="font-size: 1.8rem; font-weight: 700; color: var(--accent-gold); margin: 10px 0;">Rp 10.000 <span style="font-size: 0.9rem; color: #666;">/ Box</span></div>
+                        <ul style="list-style: none; margin-top: 15px; font-size: 0.9rem;">
+                            <li>✓ <strong>Isi:</strong> 1 Box isi 10 Pcs</li>
+                            <li>✓ <strong>Kondisi:</strong> Fresh / Ready-to-cook</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: white; padding: 25px; border-radius: 12px;">
+                        <form onsubmit="kirimWA(event)">
+                            <div class="form-group">
+                                <label>Nama Lengkap</label>
+                                <input type="text" id="nama" class="form-control" placeholder="Nama Anda" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Jumlah Box (Rp 10.000/Box)</label>
+                                <input type="number" id="jumlah" class="form-control" value="1" min="1" oninput="hitungTotal()" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Alamat Pengiriman</label>
+                                <textarea id="alamat" class="form-control" rows="2" placeholder="Alamat lengkap" required></textarea>
+                            </div>
+                            <div style="background: var(--light-blue); padding: 12px; border-radius: 8px; margin-bottom: 15px; font-weight: 600; display: flex; justify-content: space-between;">
+                                <span>Total Tagihan:</span>
+                                <span id="totalBox">Rp 10.000</span>
+                            </div>
+                            <button type="submit" class="btn btn-whatsapp" style="width: 100%; justify-content: center;">
+                                <i class="fa-brands fa-whatsapp"></i> Pesan & Kirim Nota WA
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-grid">
+            <div>
+                <h3>Nugget Jantung Pisang</h3>
+                <p>Camilan sehat, lezat, dan bergizi untuk keluarga.</p>
+                <p style="margin-top: 10px;"><a href="https://instagram.com" target="_blank" style="color: #93c5fd; text-decoration: none;"><i class="fa-brands fa-instagram"></i> @nugget.jantungpisang</a></p>
+            </div>
+            <div>
+                <h4>Kontak Pemesanan</h4>
+                <p><i class="fa-brands fa-whatsapp"></i> WhatsApp: <a href="https://wa.me/6285749447208" style="color: #93c5fd;">085749447208</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function hitungTotal() {
+            let qty = parseInt(document.getElementById('jumlah').value) || 0;
+            let total = qty * 10000;
+            document.getElementById('totalBox').innerText = "Rp " + total.toLocaleString('id-ID');
+        }
+
+        function kirimWA(e) {
+            e.preventDefault();
+            let nama = document.getElementById('nama').value;
+            let jumlah = parseInt(document.getElementById('jumlah').value) || 1;
+            let alamat = document.getElementById('alamat').value;
+            let total = jumlah * 10000;
+
+            let now = new Date();
+            let dateCode = now.getFullYear().toString().slice(-2) + String(now.getMonth() + 1).padStart(2, '0') + String(now.getDate()).padStart(2, '0');
+            let randomCode = Math.floor(100 + Math.random() * 900);
+            let noAntrean = `NJP-${dateCode}-${randomCode}`;
+
+            let teks = `🧾 *NOTA PESANAN - NUGGET JANTUNG PISANG*
+====================================
+📌 *No. Antrean :* ${noAntrean}
+📅 *Waktu :* ${now.toLocaleDateString('id-ID')}
+====================================
+
+👤 *Data Pemesan:*
+• *Nama :* ${nama}
+• *Alamat :* ${alamat}
+
+📦 *Rincian Pesanan:*
+• *Produk :* Nugget Jantung Pisang (Isi 10 Pcs/Box)
+• *Jumlah :* ${jumlah} Box
+• *Harga Satuan :* Rp 10.000
+------------------------------------
+💰 *TOTAL TAGIHAN : Rp ${total.toLocaleString('id-ID')}*
+====================================
+
+Halo Admin, saya konfirmasi pesanan dengan No. Antrean *${noAntrean}*. Mohon diproses ya. Terima kasih!`;
+
+            window.open(`https://wa.me/6285749447208?text=${encodeURIComponent(teks)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
